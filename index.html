@@ -10,16 +10,16 @@
   </style>
 </head>
 <body class="bg-[var(--navy)] text-white">
-  <!-- NAV / BRAND -->
+  <!-- HEADER -->
   <header class="max-w-6xl mx-auto flex items-center justify-between p-4">
     <div class="flex items-center gap-3">
-      <!-- Larger logo -->
-      <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-14 h-14 rounded" />
+      <img src="safexchangett.PNG" alt="SafeXchange TT"
+           class="rounded" style="width:195px;height:287px;" />
       <div class="leading-tight">
-        <!-- Larger brand text -->
-        <div class="font-extrabold tracking-wide text-xl md:text-2xl">SafeXchange TT</div>
-        <!-- Slogan under signage -->
-        <div class="text-[var(--gold)] text-sm md:text-base font-semibold">The safer way to buy &amp; sell</div>
+        <div class="font-extrabold tracking-wide" style="font-size:24px;">SafeXchange TT</div>
+        <div class="text-[var(--gold)] font-semibold text-sm md:text-base">
+          The safer way to buy &amp; sell
+        </div>
       </div>
     </div>
     <a href="#waitlist" class="px-4 py-2 rounded-xl bg-[var(--gold)] text-black font-semibold">Join Waitlist</a>
@@ -28,14 +28,12 @@
   <!-- HERO -->
   <section class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-center">
     <div>
-      <!-- New headline -->
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
         A safer marketplace for all
       </h1>
-      <!-- Removed: verified identities / escrow / couriers line -->
-      <!-- New punchline -->
       <p class="mt-4 text-lg text-[var(--ink)]/90">
-        <strong>Is your safety worth a dollar?</strong> Stop scams, avoid risky meetups, and trade with confidence.
+        <strong>Is your safety worth a it?</strong>
+        Avoid scams and risky meetups on these open Marketplaces, and trade with confidence using our services.
       </p>
       <a href="#waitlist" class="inline-block mt-6 px-6 py-3 bg-[var(--gold)] text-black font-bold rounded-xl">
         Get Early Access
@@ -43,36 +41,37 @@
       <p class="mt-3 text-sm text-[var(--ink)]/70">Free to join • Limited pilot spots</p>
     </div>
 
-    <!-- Benefits card -->
     <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-      <!-- New heading above points -->
       <h2 class="text-xl md:text-2xl font-bold mb-4">Why choose SafeXchange TT</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-          <div><strong>Escrow wallet</strong> — funds are held until you confirm delivery.</div>
+          <div><strong class="text-[var(--gold)]">Escrow Wallet</strong> — funds are held until you confirm delivery.</div>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-          <div><strong>Verified users (KYC)</strong> — real people, real accountability.</div>
+          <div><strong class="text-[var(--gold)]">Verified Users (KYC)</strong> — real people, real accountability.</div>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-          <div><strong>Secure courier + OTP</strong> — GPS tracked, photo &amp; timestamped proof.</div>
+          <div><strong class="text-[var(--gold)]">Secure Courier + OTP</strong> — GPS tracked, photo &amp; timestamped proof.</div>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-          <div><strong>Dispute support</strong> — fast, fair resolutions within 48–96 hours.</div>
+          <div><strong class="text-[var(--gold)]">Safe Trade Zones</strong> — secured transaction locations.</div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
+          <div><strong class="text-[var(--gold)]">Dispute Support</strong> — fast, fair resolutions within 48–96 hours.</div>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- SOCIAL IMPORT / ADVERTISING -->
+  <!-- SOCIAL / ADVERTISING -->
   <section class="max-w-6xl mx-auto px-4 py-8">
     <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-      <!-- Changed title -->
-      <h2 class="text-2xl font-bold">Advertise with Facebook, Instagram, WhatsApp</h2>
+      <h2 class="text-2xl font-bold">You can still advertise with Facebook, Instagram, WhatsApp</h2>
       <p class="mt-2 text-[var(--ink)]/90">
         Keep your social selling. Create a SafeXchange listing link with escrow &amp; courier protection,
         then share it anywhere.
@@ -86,48 +85,9 @@
       <h3 class="text-2xl font-bold">Join the Early Access Waitlist</h3>
       <p class="mt-1 text-gray-700">Be first to get verified and trade safely.</p>
 
-      <!-- Replace action with your Formspree or Google Forms endpoint -->
       <form action="#" method="POST" class="mt-6 grid gap-4">
         <div class="grid md:grid-cols-2 gap-4">
           <input name="full_name" placeholder="Full name" class="border rounded-lg p-3" required />
           <input type="email" name="email" placeholder="Email" class="border rounded-lg p-3" required />
         </div>
-        <div class="grid md:grid-cols-2 gap-4">
-          <input name="phone" placeholder="Phone (optional)" class="border rounded-lg p-3" />
-          <select name="user_type" class="border rounded-lg p-3" required>
-            <option value="">I am a…</option>
-            <option>Buyer</option>
-            <option>Seller</option>
-            <option>Both</option>
-            <option>Service Provider</option>
-          </select>
-        </div>
-        <select name="primary_category" class="border rounded-lg p-3">
-          <option value="">Main category</option>
-          <option>Phones & Electronics</option>
-          <option>Fashion</option>
-          <option>Furniture</option>
-          <option>Services/Repairs</option>
-          <option>Other</option>
-        </select>
-        <textarea name="pain_point" rows="3" placeholder="What’s your #1 concern with online selling/buying today?" class="border rounded-lg p-3"></textarea>
-        <button class="bg-[var(--navy)] text-white font-bold rounded-xl px-6 py-3 border border-black/10">
-          Request Invite
-        </button>
-        <p class="text-xs text-gray-600">By joining, you agree to be contacted about pilot access and product updates.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="max-w-6xl mx-auto p-6">
-    <!-- Bigger & gold footer line -->
-    <div class="text-[var(--gold)] text-lg md:text-xl font-extrabold">
-      SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”
-    </div>
-    <div class="mt-2 text-sm text-[var(--ink)]/80">
-      Light privacy notice: We collect contact details to manage your early access and keep you updated. We don’t sell your data. You can opt out anytime.
-    </div>
-  </footer>
-</body>
-</html>
+        <div class="grid md:grid-
