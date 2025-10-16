@@ -10,11 +10,17 @@
   </style>
 </head>
 <body class="bg-[var(--navy)] text-white">
-  <!-- NAV -->
+  <!-- NAV / BRAND -->
   <header class="max-w-6xl mx-auto flex items-center justify-between p-4">
     <div class="flex items-center gap-3">
-      <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-10 h-10 rounded" />
-      <span class="font-bold tracking-wide">SafeXchange TT</span>
+      <!-- Larger logo -->
+      <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-14 h-14 rounded" />
+      <div class="leading-tight">
+        <!-- Larger brand text -->
+        <div class="font-extrabold tracking-wide text-xl md:text-2xl">SafeXchange TT</div>
+        <!-- Slogan under signage -->
+        <div class="text-[var(--gold)] text-sm md:text-base font-semibold">The safer way to buy &amp; sell</div>
+      </div>
     </div>
     <a href="#waitlist" class="px-4 py-2 rounded-xl bg-[var(--gold)] text-black font-semibold">Join Waitlist</a>
   </header>
@@ -22,19 +28,25 @@
   <!-- HERO -->
   <section class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10 items-center">
     <div>
+      <!-- New headline -->
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-        The safer way to buy & sell in Trinidad & Tobago
+        A safer marketplace for all
       </h1>
+      <!-- Removed: verified identities / escrow / couriers line -->
+      <!-- New punchline -->
       <p class="mt-4 text-lg text-[var(--ink)]/90">
-        Verified identities, escrow-secured payments, and secure couriers with OTP delivery.
-        Stop scams, avoid risky meetups, and trade with confidence.
+        <strong>Is your safety worth a dollar?</strong> Stop scams, avoid risky meetups, and trade with confidence.
       </p>
       <a href="#waitlist" class="inline-block mt-6 px-6 py-3 bg-[var(--gold)] text-black font-bold rounded-xl">
         Get Early Access
       </a>
       <p class="mt-3 text-sm text-[var(--ink)]/70">Free to join • Limited pilot spots</p>
     </div>
+
+    <!-- Benefits card -->
     <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+      <!-- New heading above points -->
+      <h2 class="text-xl md:text-2xl font-bold mb-4">Why choose SafeXchange TT</h2>
       <ul class="space-y-4">
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
@@ -46,7 +58,7 @@
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
-          <div><strong>Secure courier + OTP</strong> — GPS tracked, photo & timestamped proof.</div>
+          <div><strong>Secure courier + OTP</strong> — GPS tracked, photo &amp; timestamped proof.</div>
         </li>
         <li class="flex items-start gap-3">
           <span class="mt-1 w-2 h-2 rounded-full bg-[var(--gold)]"></span>
@@ -56,12 +68,13 @@
     </div>
   </section>
 
-  <!-- SOCIAL IMPORT -->
+  <!-- SOCIAL IMPORT / ADVERTISING -->
   <section class="max-w-6xl mx-auto px-4 py-8">
     <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-      <h2 class="text-2xl font-bold">List from Facebook, Instagram, WhatsApp</h2>
+      <!-- Changed title -->
+      <h2 class="text-2xl font-bold">Advertise with Facebook, Instagram, WhatsApp</h2>
       <p class="mt-2 text-[var(--ink)]/90">
-        Keep your social selling. Create a SafeXchange listing link with escrow & courier protection,
+        Keep your social selling. Create a SafeXchange listing link with escrow &amp; courier protection,
         then share it anywhere.
       </p>
     </div>
@@ -73,7 +86,7 @@
       <h3 class="text-2xl font-bold">Join the Early Access Waitlist</h3>
       <p class="mt-1 text-gray-700">Be first to get verified and trade safely.</p>
 
-      <!-- If using Google Forms: replace action with your form endpoint or Formspree URL -->
+      <!-- Replace action with your Formspree or Google Forms endpoint -->
       <form action="#" method="POST" class="mt-6 grid gap-4">
         <div class="grid md:grid-cols-2 gap-4">
           <input name="full_name" placeholder="Full name" class="border rounded-lg p-3" required />
@@ -107,9 +120,14 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="max-w-6xl mx-auto p-6 text-sm text-[var(--ink)]/70">
-    <div>© SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”</div>
-    <div class="mt-2">Light privacy notice: We collect contact details to manage your early access and keep you updated. We don’t sell your data. You can opt out anytime.</div>
+  <footer class="max-w-6xl mx-auto p-6">
+    <!-- Bigger & gold footer line -->
+    <div class="text-[var(--gold)] text-lg md:text-xl font-extrabold">
+      SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”
+    </div>
+    <div class="mt-2 text-sm text-[var(--ink)]/80">
+      Light privacy notice: We collect contact details to manage your early access and keep you updated. We don’t sell your data. You can opt out anytime.
+    </div>
   </footer>
 </body>
 </html>
