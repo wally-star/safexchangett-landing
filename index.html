@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SafeXchange TT — The safer way to buy & sell</title>
+  <meta name="description" content="SafeXchange TT is the safer way to buy and sell in Trinidad & Tobago. Escrow-secured payments, verified users (KYC), secure courier + OTP, Safe Trade Zones, and dispute support."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --navy:#0A0F3C;
+      --gold:#FFD447;
+      --ink:#E6E8F2;
+    }
+    html,body{background:var(--navy);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    /* subtle gradient grid */
+    body:before{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.06;
+      background-image: radial-gradient(#fff 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* smooth hover */
+    .lift{transition:transform .2s ease, box-shadow .2s ease}
+    .lift:hover{transform:translateY(-2px)}
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="bg-[var(--navy)]/95 border-b border-white/10 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-4">
+        <!-- Bigger logo + brand -->
+        <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-16 h-16 rounded"/>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-wide text-2xl md:text-3xl">SafeXchange TT</div>
+          <div class="text-[var(--gold)] text-sm md:text-base font-semibold">The safer way to buy &amp; sell</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-lg">
+        <a href="about.html" class="hover:opacity-80">About</a>
+        <a href="faq.html" class="hover:opacity-80">FAQ</a>
+        <a href="products.html" class="hover:opacity-80">Browse</a>
+        <a href="safe-trade-zones.html" class="hover:opacity-80">Safe Trade Zones</a>
+        <a href="contact.html" class="hover:opacity-80">Contact</a>
+        <a href="#waitlist" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-semibold hover:opacity-90">Join Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <!-- decorative glows -->
+    <div class="absolute -top-28 -left-28 w-[42rem] h-[42rem] rounded-full blur-3xl opacity-20"
+         style="background: radial-gradient(closest-side, #FFD447 0%, transparent 70%);"></div>
+    <div class="absolute -bottom-28 -right-28 w-[42rem] h-[42rem] rounded-full blur-3xl opacity-20"
+         style="background: radial-gradient(closest-side, #6FB1FC 0%, transparent 70%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left copy -->
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-24 h-24 rounded"/>
+          <div>
+            <div class="text-3xl md:text-4xl font-extrabold leading-none">SafeXchange TT</div>
+            <div class="text-[var(--gold)] text-base md:text-lg font-semibold">The safer way to buy &amp; sell</div>
+          </div>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05]">
+          A safer marketplace<br class="hidden md:block"/> for all
+        </h1>
+
+        <p class="mt-5 text-lg md:text-xl text-[var(--ink)]/90 max-w-xl">
+          <strong>Is your safety worth it?</strong> Avoid scams and risky meetups on open marketplaces,
+          and trade with confidence using our escrow, verified users, secure couriers, and Safe Trade Zones.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#waitlist" class="px-7 py-3 bg-[var(--gold)] text-black font-bold rounded-xl hover:opacity-90 focus:ring-2 focus:ring-[var(--gold)] focus:outline-none">Get Early Access</a>
+          <a href="products.html" class="px-7 py-3 border border-white/15 bg-white/5 rounded-xl hover:bg-white/10">Browse Listings</a>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3 text-sm text-[var(--ink)]/90">
+          <span class="bg-white/5 px-3 py-2 rounded-lg border border-white/10">Escrow-secured</span>
+          <span class="bg-white/5 px-3 py-2 rounded-lg border border-white/10">Verified users (KYC)</span>
+          <span class="bg-white/5 px-3 py-2 rounded-lg border border-white/10">Secure courier + OTP</span>
+          <span class="bg-white/5 px-3 py-2 rounded-lg border border-white/10">Safe Trade Zones</span>
+        </div>
+      </div>
+
+      <!-- Right feature card -->
+      <div class="bg-white/5 backdrop-blur border border-white/10 rounded-3xl p-8 shadow-xl lift">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Why choose SafeXchange TT</h2>
+        <ul class="mt-6 space-y-5">
+          <li class="flex gap-3 items-start">
+            <span class="mt-1 w-2.5 h-2.5 rounded-full bg-[var(--gold)]"></span>
+            <div><strong class="text-[var(--gold)]">Escrow Wallet</strong> — funds are held until you confirm delivery.</div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="mt-1 w-2.5 h-2.5 rounded-full bg-[var(--gold)]"></span>
+            <div><strong class="text-[var(--gold)]">Verified Users (KYC)</strong> — real people, real accountability.</div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="mt-1 w-2.5 h-2.5 rounded-full bg-[var(--gold)]"></span>
+            <div><strong class="text-[var(--gold)]">Secure Courier + OTP</strong> — GPS tracked, photo &amp; timestamped proof.</div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="mt-1 w-2.5 h-2.5 rounded-full bg-[var(--gold)]"></span>
+            <div><strong class="text-[var(--gold)]">Safe Trade Zones</strong> — secured transaction locations.</div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="mt-1 w-2.5 h-2.5 rounded-full bg-[var(--gold)]"></span>
+            <div><strong class="text-[var(--gold)]">Dispute Support</strong> — fast, fair resolutions within 48–96 hours.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL/ADVERT STRIP -->
+  <section class="max-w-7xl mx-auto px-4 md:px-6 py-8">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold">You can still advertise with Facebook, Instagram, WhatsApp</h2>
+      <p class="mt-2 text-[var(--ink)]/90 max-w-3xl">
+        Keep using your favourite social platforms. Create a SafeXchange listing link with escrow &amp; secure delivery,
+        then share it anywhere to add protection and confidence.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORIES GALLERY -->
+  <section class="max-w-7xl mx-auto px-4 md:px-6 py-8">
+    <h3 class="text-2xl md:text-3xl font-extrabold mb-4">Popular categories</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <a href="products.html" class="group relative overflow-hidden rounded-2xl border border-white/10 lift">
+        <img src="https://picsum.photos/seed/phones/800/600" class="w-full h-48 object-cover group-hover:scale-[1.02] transition" alt="Phones & Electronics">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 text-lg font-bold">Phones &amp; Electronics</div>
+      </a>
+      <a href="products.html" class="group relative overflow-hidden rounded-2xl border border-white/10 lift">
+        <img src="https://picsum.photos/seed/fashion/800/600" class="w-full h-48 object-cover group-hover:scale-[1.02] transition" alt="Fashion">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 text-lg font-bold">Fashion</div>
+      </a>
+      <a href="products.html" class="group relative overflow-hidden rounded-2xl border border-white/10 lift">
+        <img src="https://picsum.photos/seed/furniture/800/600" class="w-full h-48 object-cover group-hover:scale-[1.02] transition" alt="Furniture">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 text-lg font-bold">Furniture</div>
+      </a>
+      <a href="products.html" class="group relative overflow-hidden rounded-2xl border border-white/10 lift">
+        <img src="https://picsum.photos/seed/services/800/600" class="w-full h-48 object-cover group-hover:scale-[1.02] transition" alt="Services & Repairs">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 text-lg font-bold">Services &amp; Repairs</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- WAITLIST CTA -->
+  <section id="waitlist" class="max-w-3xl mx-auto px-4 md:px-6 py-14">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+      <h3 class="text-2xl md:text-3xl font-extrabold">Request early access</h3>
+      <p class="mt-2 text-[var(--ink)]/90">Free to join • Limited pilot spots</p>
+
+      <!-- Replace action with Formspree/Google Forms/Supabase when ready -->
+      <form action="#" method="POST" class="mt-6 grid gap-4">
+        <input name="full_name" placeholder="Full name" required class="rounded-lg p-3 text-black"/>
+        <input name="email" type="email" placeholder="Email" required class="rounded-lg p-3 text-black"/>
+        <div class="grid md:grid-cols-2 gap-4">
+          <input name="phone" placeholder="Phone (optional)" class="rounded-lg p-3 text-black"/>
+          <select name="user_type" class="rounded-lg p-3 text-black">
+            <option value="">I am a…</option>
+            <option>Buyer</option>
+            <option>Seller</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <select name="primary_category" class="rounded-lg p-3 text-black">
+            <option value="">Primary category</option>
+            <option>Phones & Electronics</option>
+            <option>Fashion</option>
+            <option>Furniture</option>
+            <option>Services/Repairs</option>
+          </select>
+          <input name="pain_point" placeholder="Biggest pain (scams, risky meetups, etc.)" class="rounded-lg p-3 text-black"/>
+        </div>
+        <button class="mt-2 px-6 py-3 bg-[var(--gold)] text-black font-bold rounded-xl hover:opacity-90 lift">Request Invite</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="max-w-7xl mx-auto px-4 md:px-6 py-10">
+    <div class="flex flex-wrap items-center gap-4 justify-between">
+      <div class="text-sm text-[var(--ink)]/80">
+        <a href="privacy.html" class="underline">Privacy</a> ·
+        <a href="terms.html" class="underline">Terms</a> ·
+        <a href="faq.html" class="underline">FAQ</a> ·
+        <a href="safe-trade-zones.html" class="underline">Safe Trade Zones</a> ·
+        <a href="contact.html" class="underline">Contact</a>
+      </div>
+      <div class="font-extrabold" style="color:#FFD447;font-size:16px;">
+        SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
