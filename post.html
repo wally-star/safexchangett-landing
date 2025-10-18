@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Post Listing — SafeXchange TT</title>
+  <meta name="description" content="Create a SafeXchange TT listing with escrow, courier and Safe Trade Zones.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--navy:#0A0F3C;--gold:#FFD447;--ink:#E6E8F2}
+    html,body{background:var(--navy);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+    .lift{transition:transform .25s ease, box-shadow .25s ease}
+    .lift:hover{transform:translateY(-3px)}
+    .badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .step-dot{width:28px;height:28px;border-radius:999px;display:grid;place-items:center}
+    .dot-active{background:#FFD447;color:#111;font-weight:800}
+    .dot-done{background:#19c37d;color:#111;font-weight:800}
+    .dot-idle{background:rgba(255,255,255,.12)}
+    .hiddenish{display:none}
+    .thumb{width:84px;height:84px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="bg-[var(--navy)]/95 border-b border-white/10 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-4">
+        <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-14 h-14 rounded"/>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-wide text-2xl md:text-3xl">SafeXchange TT</div>
+          <div class="text-[var(--gold)] text-sm md:text-base font-semibold">The safer way to buy &amp; sell</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="products.html" class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10">Browse</a>
+        <a href="index.html#waitlist" class="px-4 py-2 rounded-lg bg-[var(--gold)] text-black font-semibold hover:opacity-90">Join Pilot</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="max-w-5xl mx-auto px-4 md:px-6 pt-8">
+    <h1 class="text-4xl md:text-5xl font-extrabold">Post a Listing</h1>
+    <p class="mt-2 text-white/85 max-w-2xl">Create a protected listing with escrow, courier options, and Safe Trade Zones. This is a **pilot** mock flow — submissions route to the waitlist.</p>
+  </header>
+
+  <!-- STEPS / PROGRESS -->
+  <section class="max-w-5xl mx-auto px-4 md:px-6 pt-6">
+    <div class="glass rounded-2xl p-4 md:p-5">
+      <div class="grid grid-cols-4 gap-2 items-center text-center text-sm">
+        <div class="flex flex-col items-center gap-2">
+          <div id="d1" class="step-dot dot-active">1</div><span>Details</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div id="d2" class="step-dot dot-idle">2</div><span>Price</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div id="d3" class="step-dot dot-idle">3</div><span>Delivery</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div id="d4" class="step-dot dot-idle">4</div><span>Preview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM STEPS -->
+  <form id="postForm" class="max-w-5xl mx-auto px-4 md:px-6 pb-16">
+    <!-- STEP 1: DETAILS -->
+    <div id="step1" class="glass rounded-2xl p-5 md:p-6 mt-6">
+      <h2 class="text-2xl font-extrabold mb-4">1) Listing details</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm mb-1">Title <span class="text-[var(--gold)]">*</span></label>
+          <input name="title" required class="w-full p-3 rounded-xl text-black" placeholder="e.g., iPhone 13 Pro 256GB"/>
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Category <span class="text-[var(--gold)]">*</span></label>
+          <select name="category" required class="w-full p-3 rounded-xl text-black">
+            <option value="">Select a category</option>
+            <option>Phones & Electronics</option>
+            <option>Fashion</option>
+            <option>Furniture</option>
+            <option>Services & Repairs</option>
+            <option>Vehicles</option>
+            <option>Sporting Goods</option>
+            <option>Home Goods</option>
+          </select>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">Description <span class="text-[var(--gold)]">*</span></label>
+          <textarea name="desc" required rows="4" class="w-full p-3 rounded-xl text-black" placeholder="Key details, condition, what’s included…"></textarea>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-2">Photos (up to 6)</label>
+          <input id="photos" type="file" accept="image/*" multiple class="w-full p-3 rounded-xl bg-white/70 text-black"/>
+          <div id="thumbs" class="mt-3 flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+      <div class="mt-5 flex justify-end gap-3">
+        <button type="button" id="to2" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-bold lift">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: PRICE -->
+    <div id="step2" class="glass rounded-2xl p-5 md:p-6 mt-6 hiddenish">
+      <h2 class="text-2xl font-extrabold mb-4">2) Price</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm mb-1">Price (TT$) <span class="text-[var(--gold)]">*</span></label>
+          <input name="price" type="number" min="0" required class="w-full p-3 rounded-xl text-black" placeholder="e.g., 3500"/>
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Condition</label>
+          <select name="condition" class="w-full p-3 rounded-xl text-black">
+            <option>New</option>
+            <option>Like New</option>
+            <option>Good</option>
+            <option>Fair</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-5 flex justify-between gap-3">
+        <button type="button" id="back1" class="px-5 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10">Back</button>
+        <button type="button" id="to3" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-bold lift">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: DELIVERY & PROTECTION -->
+    <div id="step3" class="glass rounded-2xl p-5 md:p-6 mt-6 hiddenish">
+      <h2 class="text-2xl font-extrabold mb-4">3) Delivery & protection</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="badge rounded-2xl p-4">
+          <label class="flex items-start gap-3">
+            <input type="checkbox" name="escrow" checked class="mt-1">
+            <span><span class="font-bold text-[var(--gold)]">Escrow required</span><br/>Funds are released only after the buyer confirms delivery.</span>
+          </label>
+        </div>
+
+        <div class="badge rounded-2xl p-4">
+          <label class="flex items-start gap-3">
+            <input type="checkbox" name="courier" class="mt-1">
+            <span><span class="font-bold text-[var(--gold)]">Secure courier + OTP</span><br/>GPS tracked, photo & timestamped proof. Insurance available.</span>
+          </label>
+        </div>
+
+        <div class="badge rounded-2xl p-4 md:col-span-2">
+          <label class="flex items-start gap-3">
+            <input type="checkbox" name="safezone" class="mt-1">
+            <span><span class="font-bold text-[var(--gold)]">Safe Trade Zone handover</span><br/>Choose a designated location for in-person exchange.</span>
+          </label>
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">Preferred pickup / meetup area</label>
+          <input name="area" class="w-full p-3 rounded-xl text-black" placeholder="e.g., Port of Spain, Chaguanas…"/>
+        </div>
+      </div>
+
+      <div class="mt-5 flex justify-between gap-3">
+        <button type="button" id="back2" class="px-5 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10">Back</button>
+        <button type="button" id="to4" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-bold lift">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: PREVIEW -->
+    <div id="step4" class="glass rounded-2xl p-5 md:p-6 mt-6 hiddenish">
+      <h2 class="text-2xl font-extrabold mb-4">4) Preview</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card preview -->
+        <article class="rounded-2xl overflow-hidden badge">
+          <img id="pImg" src="https://picsum.photos/seed/placeholder/800/600" class="w-full h-48 object-cover" alt="Preview">
+          <div class="p-4">
+            <div id="pTitle" class="text-lg font-bold leading-tight line-clamp-2">Title</div>
+            <div id="pPrice" class="mt-1 text-[var(--gold)] font-extrabold">TT$0</div>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="badge px-2 py-1 rounded">Escrow</span>
+              <span class="badge px-2 py-1 rounded">Courier + OTP</span>
+              <span id="pCat" class="badge px-2 py-1 rounded">Category</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Details -->
+        <div class="badge rounded-2xl p-4">
+          <div class="font-bold text-[var(--gold)] mb-1">Listing summary</div>
+          <div class="text-white/90">
+            <div id="pCond" class="mb-1">Condition: —</div>
+            <div id="pArea" class="mb-1">Area: —</div>
+            <div class="mb-2">Protection: <span id="pProt">Escrow</span></div>
+            <div class="text-white/85" id="pDesc">—</div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <button type="button" id="editBack" class="px-5 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10">Edit</button>
+            <a href="index.html#waitlist" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-bold lift">Submit to Pilot</a>
+          </div>
+          <p class="mt-3 text-xs text-white/70">Pilot note: This mock flow stores your draft locally. “Submit to Pilot” takes you to the waitlist to request onboarding.</p>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- FOOTER -->
+  <footer class="max-w-5xl mx-auto px-4 md:px-6 pb-10">
+    <div class="flex flex-wrap items-center gap-4 justify-between">
+      <div class="text-sm text-white/80">
+        <a href="privacy.html" class="underline">Privacy</a> ·
+        <a href="terms.html" class="underline">Terms</a> ·
+        <a href="faq.html" class="underline">FAQ</a> ·
+        <a href="safe-trade-zones.html" class="underline">Safe Trade Zones</a> ·
+        <a href="contact.html" class="underline">Contact</a>
+      </div>
+      <div class="font-extrabold" style="color:#FFD447;font-size:16px;">
+        SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIC -->
+  <script>
+    const S = {step:1, data: JSON.parse(localStorage.getItem('sx_post')||'{}')};
+
+    const stepEls = [null,
+      document.getElementById('step1'),
+      document.getElementById('step2'),
+      document.getElementById('step3'),
+      document.getElementById('step4')
+    ];
+    const dots = [null,
+      document.getElementById('d1'),
+      document.getElementById('d2'),
+      document.getElementById('d3'),
+      document.getElementById('d4')
+    ];
+
+    function showStep(n){
+      S.step=n;
+      stepEls.forEach((el,i)=>{ if(!el) return; el.classList.toggle('hiddenish', i!==n); });
+      dots.forEach((d,i)=>{
+        if(!d) return;
+        d.className = 'step-dot ' + (i<n ? 'dot-done' : i===n ? 'dot-active' : 'dot-idle');
+      });
+      localStorage.setItem('sx_post', JSON.stringify(S.data));
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    // Photos preview
+    const photos = document.getElementById('photos');
+    const thumbs = document.getElementById('thumbs');
+    let firstImg = null;
+    photos?.addEventListener('change', e=>{
+      thumbs.innerHTML = '';
+      firstImg = null;
+      Array.from(e.target.files).slice(0,6).forEach((f,idx)=>{
+        const url = URL.createObjectURL(f);
+        if(idx===0) firstImg=url;
+        const img=document.createElement('img');
+        img.src=url; img.alt='photo'; img.className='thumb';
+        thumbs.appendChild(img);
+      });
+    });
+
+    // Buttons
+    document.getElementById('to2').onclick = ()=>{
+      const fd = new FormData(document.getElementById('postForm'));
+      if(!fd.get('title') || !fd.get('category') || !fd.get('desc')) { alert('Please fill title, category and description.'); return; }
+      S.data.title=fd.get('title'); S.data.category=fd.get('category'); S.data.desc=fd.get('desc');
+      S.data.firstImg=firstImg || 'https://picsum.photos/seed/placeholder/800/600';
+      showStep(2);
+    };
+    document.getElementById('back1').onclick = ()=> showStep(1);
+
+    document.getElementById('to3').onclick = ()=>{
+      const fd = new FormData(document.getElementById('postForm'));
+      if(!fd.get('price')) { alert('Enter a price.'); return; }
+      S.data.price = Number(fd.get('price')); S.data.condition = fd.get('condition');
+      showStep(3);
+    };
+    document.getElementById('back2').onclick = ()=> showStep(2);
+
+    document.getElementById('to4').onclick = ()=>{
+      const fd = new FormData(document.getElementById('postForm'));
+      S.data.escrow = !!fd.get('escrow'); S.data.courier = !!fd.get('courier'); S.data.safezone = !!fd.get('safezone');
+      S.data.area = fd.get('area') || '—';
+      // Populate preview
+      document.getElementById('pImg').src = S.data.firstImg;
+      document.getElementById('pTitle').textContent = S.data.title || '—';
+      document.getElementById('pPrice').textContent = 'TT$' + (S.data.price||0).toLocaleString();
+      document.getElementById('pCat').textContent = S.data.category || '—';
+      document.getElementById('pCond').textContent = 'Condition: ' + (S.data.condition || '—');
+      document.getElementById('pArea').textContent = 'Area: ' + (S.data.area || '—');
+      const prot = [
+        S.data.escrow ? 'Escrow' : null,
+        S.data.courier ? 'Courier + OTP' : null,
+        S.data.safezone ? 'Safe Trade Zone' : null
+      ].filter(Boolean).join(', ') || '—';
+      document.getElementById('pProt').textContent = prot;
+      document.getElementById('pDesc').textContent = S.data.desc || '—';
+      showStep(4);
+    };
+
+    document.getElementById('editBack').onclick = ()=> showStep(1);
+
+    // Restore draft (if any)
+    if(S.data.title){
+      document.querySelector('[name=title]').value = S.data.title||'';
+      document.querySelector('[name=category]').value = S.data.category||'';
+      document.querySelector('[name=desc]').value = S.data.desc||'';
+      document.querySelector('[name=price]').value = S.data.price||'';
+      document.querySelector('[name=condition]').value = S.data.condition||'Good';
+      document.querySelector('[name=area]').value = S.data.area||'';
+    }
+  </script>
+</body>
+</html>
