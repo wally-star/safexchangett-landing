@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Marketplace — SafeXchange TT</title>
+  <meta name="description" content="Discover SafeXchange TT listings — escrow-secured trades, verified users, secure courier + OTP, Safe Trade Zones."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--navy:#0A0F3C;--gold:#FFD447;--ink:#E6E8F2;--c1:#6fb1fc;--c2:#ae7bff}
+    html,body{background:var(--navy);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+    .lift{transition:transform .25s ease, box-shadow .25s ease}
+    .lift:hover{transform:translateY(-3px)}
+    .chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+    .badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+    .snapx{scroll-snap-type:x mandatory}
+    .snapc{scroll-snap-align:start}
+    .shine{position:relative;overflow:hidden}
+    .shine:after{content:"";position:absolute;inset:-200% -50%;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.12),transparent 60%);transform:rotate(12deg);animation:shine 6s linear infinite}
+    @keyframes shine{to{transform:translateX(60%) rotate(12deg)}}
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="bg-[var(--navy)]/95 border-b border-white/10 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-4">
+        <img src="safexchangett.PNG" alt="SafeXchange TT" class="w-16 h-16 rounded"/>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-wide text-2xl md:text-3xl">SafeXchange TT</div>
+          <div class="text-[var(--gold)] text-sm md:text-base font-semibold">The safer way to buy &amp; sell</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-lg">
+        <a href="about.html" class="hover:opacity-80">About</a>
+        <a href="faq.html" class="hover:opacity-80">FAQ</a>
+        <a href="products.html" class="font-bold text-[var(--gold)]">Browse</a>
+        <a href="safe-trade-zones.html" class="hover:opacity-80">Safe Trade Zones</a>
+        <a href="contact.html" class="hover:opacity-80">Contact</a>
+        <a href="index.html#waitlist" class="px-5 py-3 rounded-xl bg-[var(--gold)] text-black font-semibold hover:opacity-90">Join Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative">
+    <div class="absolute -top-20 -left-10 w-[42rem] h-[42rem] rounded-full blur-3xl opacity-20"
+         style="background: radial-gradient(closest-side, var(--c2) 0%, transparent 70%);"></div>
+    <div class="absolute -bottom-24 -right-10 w-[42rem] h-[42rem] rounded-full blur-3xl opacity-20"
+         style="background: radial-gradient(closest-side, var(--c1) 0%, transparent 70%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 pt-12 pb-8">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05]">Discover. Deal. Delivered.</h1>
+      <p class="mt-3 text-white/85 max-w-2xl">
+        A modern marketplace with <span class="text-[var(--gold)] font-semibold">escrow protection</span>,
+        <span class="text-[var(--gold)] font-semibold">verified users</span>, and
+        <span class="text-[var(--gold)] font-semibold">secure courier + OTP</span>.
+      </p>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <button class="chip px-4 py-2 rounded-xl text-sm">Phones &amp; Electronics</button>
+        <button class="chip px-4 py-2 rounded-xl text-sm">Fashion</button>
+        <button class="chip px-4 py-2 rounded-xl text-sm">Furniture</button>
+        <button class="chip px-4 py-2 rounded-xl text-sm">Services &amp; Repairs</button>
+      </div>
+    </div>
+
+    <!-- wave -->
+    <svg class="block w-full" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="rgba(255,255,255,0.06)" d="M0,32 C240,72 480,-8 720,16 C960,40 1200,88 1440,24 L1440,72 L0,72 Z"></path>
+    </svg>
+  </section>
+
+  <!-- FILTER DOCK -->
+  <section class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="glass rounded-2xl p-4 md:p-5 -mt-10 md:-mt-12 relative z-10">
+      <div class="grid md:grid-cols-12 gap-3">
+        <div class="md:col-span-5">
+          <input id="q" class="w-full p-3 rounded-xl text-black" placeholder="Search titles, brands, keywords…"/>
+        </div>
+        <div class="md:col-span-2">
+          <select id="category" class="w-full p-3 rounded-xl text-black">
+            <option value="">All categories</option>
+          </select>
+        </div>
+        <div class="md:col-span-3 grid grid-cols-2 gap-3">
+          <input id="min" type="number" min="0" class="p-3 rounded-xl text-black" placeholder="Min $"/>
+          <input id="max" type="number" min="0" class="p-3 rounded-xl text-black" placeholder="Max $"/>
+        </div>
+        <div class="md:col-span-2">
+          <select id="sort" class="w-full p-3 rounded-xl text-black">
+            <option value="new">Newest</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+          </select>
+        </div>
+      </div>
+      <div id="chips" class="mt-4 flex flex-wrap gap-2 text-sm"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED SCROLLER -->
+  <section class="max-w-7xl mx-auto px-4 md:px-6 pt-8">
+    <div class="flex items-center justify-between">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Featured today</h2>
+      <a href="#grid" class="text-white/80 underline">See all</a>
+    </div>
+    <div class="mt-4 overflow-x-auto snapx flex gap-4 pb-2">
+      <div id="featureRow" class="flex gap-4 min-w-full"></div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <main id="grid" class="max-w-7xl mx-auto px-4 md:px-6 pb-14">
+    <div id="results" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-6"></div>
+    <div class="text-center mt-8">
+      <button id="loadMore" class="px-6 py-3 border border-white/15 bg-white/5 rounded-xl hover:bg-white/10 lift">Load more</button>
+    </div>
+  </main>
+
+  <!-- TRUST STRIP -->
+  <section class="max-w-7xl mx-auto px-4 md:px-6 pb-14">
+    <div class="glass rounded-2xl p-6 md:p-8">
+      <h3 class="text-2xl md:text-3xl font-extrabold">Built for safe, confident trade</h3>
+      <div class="grid md:grid-cols-4 gap-4 mt-5">
+        <div class="badge rounded-2xl p-5"><div class="font-bold text-[var(--gold)] mb-1">Escrow Wallet</div><p class="text-white/85">Funds release only after you confirm delivery.</p></div>
+        <div class="badge rounded-2xl p-5"><div class="font-bold text-[var(--gold)] mb-1">Verified Users (KYC)</div><p class="text-white/85">Real people. Real accountability.</p></div>
+        <div class="badge rounded-2xl p-5"><div class="font-bold text-[var(--gold)] mb-1">Secure Courier + OTP</div><p class="text-white/85">GPS tracked, photo & timestamped proof.</p></div>
+        <div class="badge rounded-2xl p-5"><div class="font-bold text-[var(--gold)] mb-1">Safe Trade Zones</div><p class="text-white/85">Designated locations for in-person handovers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="max-w-7xl mx-auto px-4 md:px-6 py-10">
+    <div class="flex flex-wrap items-center gap-4 justify-between">
+      <div class="text-sm text-white/80">
+        <a href="privacy.html" class="underline">Privacy</a> ·
+        <a href="terms.html" class="underline">Terms</a> ·
+        <a href="faq.html" class="underline">FAQ</a> ·
+        <a href="safe-trade-zones.html" class="underline">Safe Trade Zones</a> ·
+        <a href="contact.html" class="underline">Contact</a>
+      </div>
+      <div class="font-extrabold" style="color:#FFD447;font-size:16px;">
+        SafeXchange TT • “Building Trust. Enabling Trade. Protecting People.”
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
+    <div class="max-w-2xl w-full bg-[var(--navy)] rounded-2xl border border-white/10 overflow-hidden">
+      <div class="relative">
+        <img id="mImg" src="" alt="" class="w-full h-72 object-cover">
+        <button id="mClose" class="absolute top-3 right-3 bg-black/60 px-3 py-1 rounded-lg">✕</button>
+      </div>
+      <div class="p-5">
+        <div class="flex items-start justify-between gap-4">
+          <h3 id="mTitle" class="text-2xl font-extrabold"></h3>
+          <div id="mPrice" class="text-2xl font-extrabold text-[var(--gold)]"></div>
+        </div>
+        <div class="mt-2 text-white/85" id="mDesc"></div>
+        <div class="mt-3 flex flex-wrap gap-2 text-sm">
+          <span class="badge px-3 py-1 rounded-lg" id="mCat"></span>
+          <span class="badge px-3 py-1 rounded-lg">Escrow</span>
+          <span class="badge px-3 py-1 rounded-lg">Courier + OTP</span>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="index.html#waitlist" class="px-6 py-3 bg-[var(--gold)] text-black font-bold rounded-xl lift">Buy via Escrow (Join pilot)</a>
+          <a href="safe-trade-zones.html" class="px-6 py-3 border border-white/15 bg-white/5 rounded-xl lift">Find Safe Trade Zones</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA + LOGIC -->
+  <script>
+    // Categories (pill chips)
+    const CATS = ["Phones & Electronics","Fashion","Furniture","Services & Repairs","Vehicles","Sporting Goods","Home Goods","Musical Instruments"];
+
+    // Demo products (replace later with fetch)
+    const DATA = [
+      {id:1, title:"iPhone 13 Pro 256GB", price:4800, category:"Phones & Electronics", img:"https://picsum.photos/seed/iphone/800/600", desc:"Excellent condition, battery 89%, includes case & charger.", ts:"2025-10-15", featured:true},
+      {id:2, title:"Samsung 55\" 4K TV", price:3500, category:"Phones & Electronics", img:"https://picsum.photos/seed/tv/800/600", desc:"Crystal UHD, 2023 model, wall mount included.", ts:"2025-10-14", featured:true},
+      {id:3, title:"Men’s Running Shoes (US 10)", price:350, category:"Fashion", img:"https://picsum.photos/seed/shoes/800/600", desc:"Lightweight, barely used, like new.", ts:"2025-10-13"},
+      {id:4, title:"Wood Dining Table (6 seats)", price:1800, category:"Furniture", img:"https://picsum.photos/seed/table/800/600", desc:"Solid wood, 6 chairs included, minor marks.", ts:"2025-10-12", featured:true},
+      {id:5, title:"Laptop Repair — Screen & Battery", price:300, category:"Services & Repairs", img:"https://picsum.photos/seed/repair/800/600", desc:"Professional repair; parts charged separately; escrow milestone supported.", ts:"2025-10-12"},
+      {id:6, title:"PS5 Console + Controller", price:3500, category:"Phones & Electronics", img:"https://picsum.photos/seed/ps5/800/600", desc:"Great condition, original box.", ts:"2025-10-10"},
+      {id:7, title:"Wardrobe Cabinet", price:900, category:"Furniture", img:"https://picsum.photos/seed/wardrobe/800/600", desc:"Spacious, smooth doors, delivery available.", ts:"2025-10-09"},
+      {id:8, title:"Women’s Handbag (Leather)", price:450, category:"Fashion", img:"https://picsum.photos/seed/bag/800/600", desc:"Classic style, very good condition.", ts:"2025-10-08"},
+      {id:9, title:"iPad Air (64GB)", price:2400, category:"Phones & Electronics", img:"https://picsum.photos/seed/ipad/800/600", desc:"Wi-Fi, works perfectly.", ts:"2025-10-08"},
+      {id:10,title:"Electrician — Small Jobs", price:250, category:"Services & Repairs", img:"https://picsum.photos/seed/electric/800/600", desc:"Quick fixes; milestone escrow available.", ts:"2025-10-07"}
+    ];
+
+    // Populate category select + chips
+    const categorySel = document.getElementById('category');
+    const chips = document.getElementById('chips');
+    CATS.forEach(c=>{
+      const opt=document.createElement('option'); opt.value=c; opt.textContent=c; categorySel.appendChild(opt);
+      const b=document.createElement('button'); b.className="chip px-3 py-1 rounded-lg hover:bg-white/10"; b.textContent=c;
+      b.onclick=()=>{ categorySel.value=c; applyFilters(); window.scrollTo({top:0,behavior:'smooth'}); };
+      chips.appendChild(b);
+    });
+
+    // Featured row
+    const featureRow = document.getElementById('featureRow');
+    const featured = DATA.filter(d=>d.featured);
+    featureRow.innerHTML = featured.map(f=>`
+      <article class="shine snapc min-w-[280px] max-w-[280px] rounded-2xl overflow-hidden glass lift">
+        <button data-open="${f.id}" class="text-left w-full">
+          <img src="${f.img}" alt="${f.title}" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <div class="font-bold line-clamp-2">${f.title}</div>
+            <div class="mt-1 text-[var(--gold)] font-extrabold">TT$${f.price.toLocaleString()}</div>
+            <div class="mt-2 flex gap-2 text-xs">
+              <span class="badge px-2 py-1 rounded">Escrow</span>
+              <span class="badge px-2 py-1 rounded">Courier + OTP</span>
+            </div>
+          </div>
+        </button>
+      </article>
+    `).join("");
+
+    // Listing grid
+    let page=1, pageSize=8, filtered=[...DATA];
+    const results=document.getElementById('results');
+    function price(ttd){ return "TT$"+ttd.toLocaleString(); }
+    function card(x){ return `
+      <article class="lift rounded-2xl overflow-hidden glass">
+        <button data-open="${x.id}" class="block text-left w-full">
+          <img src="${x.img}" alt="${x.title}" class="w-full h-44 object-cover"/>
+          <div class="p-4">
+            <div class="text-lg font-bold leading-tight line-clamp-2">${x.title}</div>
+            <div class="mt-1 text-[var(--gold)] font-extrabold">${price(x.price)}</div>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="badge px-2 py-1 rounded">Escrow</span>
+              <span class="badge px-2 py-1 rounded">Courier + OTP</span>
+              <span class="badge px-2 py-1 rounded">${x.category}</span>
+            </div>
+          </div>
+        </button>
+      </article>
+    `;}
+    function render(reset=false){
+      if(reset){results.innerHTML="";page=1;}
+      const end=page*pageSize;
+      results.innerHTML=filtered.slice(0,end).map(card).join("");
+      document.getElementById('loadMore').style.display=(filtered.length>end)?"inline-block":"none";
+    }
+    function applyFilters(){
+      const q=(document.getElementById('q').value||"").toLowerCase();
+      const cat=document.getElementById('category').value;
+      const min=parseFloat(document.getElementById('min').value)||0;
+      const max=parseFloat(document.getElementById('max').value)||Number.MAX_SAFE_INTEGER;
+      const sort=document.getElementById('sort').value;
+
+      filtered=DATA.filter(it=>{
+        const text=(it.title+" "+it.desc+" "+it.category).toLowerCase();
+        const okQ=!q||text.includes(q);
+        const okC=!cat||it.category===cat;
+        const okP=it.price>=min&&it.price<=max;
+        return okQ&&okC&&okP;
+      });
+
+      filtered.sort((a,b)=>{
+        if(sort==="low") return a.price-b.price;
+        if(sort==="high") return b.price-a.price;
+        return new Date(b.ts)-new Date(a.ts);
+      });
+
+      render(true);
+    }
+    ["q","category","min","max","sort"].forEach(id=>{
+      const el=document.getElementById(id); if(el) el.addEventListener('input',applyFilters);
+    });
+    document.getElementById('loadMore').addEventListener('click',()=>{page++;render();});
+
+    // Modal
+    const modal=document.getElementById('modal');
+    document.addEventListener('click',e=>{
+      const id=e.target.closest('[data-open]')?.getAttribute('data-open');
+      if(!id) return;
+      const it=DATA.find(x=>x.id==id);
+      document.getElementById('mImg').src=it.img;
+      document.getElementById('mTitle').textContent=it.title;
+      document.getElementById('mDesc').textContent=it.desc;
+      document.getElementById('mPrice').textContent=price(it.price);
+      document.getElementById('mCat').textContent=it.category;
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+    });
+    document.getElementById('mClose').addEventListener('click',()=>{modal.classList.add('hidden');modal.classList.remove('flex');});
+    modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.add('hidden');modal.classList.remove('flex');}});
+
+    // Start
+    applyFilters();
+  </script>
+</body>
+</html>
